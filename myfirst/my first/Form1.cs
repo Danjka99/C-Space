@@ -6,6 +6,7 @@ using System.Diagnostics.PerformanceData;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,7 +25,7 @@ namespace my_first
 
         private void button1_Click(object sender, EventArgs e)
         {
-            i++;
+            i = i + c;
             button1.Text = "Hallo Welt zum " + i.ToString() + ".";
         }
 
@@ -38,12 +39,22 @@ namespace my_first
         {
             c = c * 10;
             button3.Text = c.ToString();
+            button4.Text = c.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            c = c / 10;
-            button4.Text = c.ToString();
+            if (c > 1)
+            {
+                c = c / 10;
+                button4.Text = c.ToString();
+                button3.Text = c.ToString();
+            }
+            else
+            {
+                button4.Text = c.ToString();
+                button3.Text = c.ToString();
+            }
         }
     }
 }
