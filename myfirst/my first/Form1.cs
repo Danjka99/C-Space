@@ -15,8 +15,8 @@ namespace my_first
 {
     public partial class Form1 : Form
     {
-        int i;
-        int c = 1;
+        double i;
+        double c = 1;
 
         public Form1()
         {
@@ -35,25 +35,35 @@ namespace my_first
             button1.Text = "Hallo Welt zum " + i.ToString() + ".";
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_MouseDown(object sender, MouseEventArgs e)
         {
-            c = c * 10;
-            button3.Text = c.ToString();
-            button4.Text = c.ToString();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (c > 1)
+            if (e.Button == MouseButtons.Left)
             {
-                c = c / 10;
-                button4.Text = c.ToString();
+                c = c * 10;
                 button3.Text = c.ToString();
             }
-            else
+            else if (e.Button == MouseButtons.Right)
             {
-                button4.Text = c.ToString();
+                c = c / 10;
                 button3.Text = c.ToString();
+            }
+        }
+
+        private void button4_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && button4.Height > 6)
+            {
+                button4.Width = button4.Width - 10;
+                button4.Height = button4.Height - 10;
+                button4.Left = button4.Left + 5;
+                button4.Top = button4.Top + 5;
+            }
+            else if (e.Button == MouseButtons.Right && button4.Height < 166)
+            {
+                button4.Width = button4.Width + 10;
+                button4.Height = button4.Height + 10;
+                button4.Left = button4.Left - 5;
+                button4.Top = button4.Top - 5;
             }
         }
     }

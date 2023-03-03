@@ -33,7 +33,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -49,7 +48,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 3);
+            this.button2.Location = new System.Drawing.Point(12, 173);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(256, 85);
             this.button2.TabIndex = 1;
@@ -65,7 +64,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "1";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
             // 
             // label1
             // 
@@ -76,24 +75,15 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Faktor +";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Faktor -";
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 126);
+            this.button4.Location = new System.Drawing.Point(240, 27);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 132);
+            this.button4.Size = new System.Drawing.Size(312, 116);
             this.button4.TabIndex = 4;
-            this.button4.Text = "1";
+            this.button4.Text = "Size";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button4_MouseDown);
             // 
             // Form1
             // 
@@ -102,7 +92,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 270);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
@@ -121,7 +110,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
     }
 }
