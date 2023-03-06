@@ -16,6 +16,8 @@ namespace DateTime
 
         string[] zeit = new string[1000];
 
+        string [] nummer = new string[1000];
+
         public Form1()
         {
             InitializeComponent();
@@ -32,13 +34,14 @@ namespace DateTime
         {
             for (int i = 0; i <= 999; i++)
             {
-                MessageBox.Show(zeit[i]);
+                if (!string.IsNullOrEmpty(zeit[i]))
+                    MessageBox.Show(zeit[i] + nummer[i]);
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            nummer[zaehler] = textBox1.Text;
         }
     }
 }
