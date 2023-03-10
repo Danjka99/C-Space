@@ -18,7 +18,6 @@ namespace DateTime
 
         string [] nummer = new string[1000];
 
-
         public Form1()
         {
             InitializeComponent();
@@ -27,18 +26,11 @@ namespace DateTime
         private void button1_Click(object sender, EventArgs e)
         {
             string newLine = Environment.NewLine;
-            //if (zaehler <= 999)
-            zeit[zaehler] = System.DateTime.Now.TimeOfDay.ToString();
-            textBox2.Text += newLine + "Startnummer: " + nummer[zaehler] + " | " + zeit[zaehler];
-            zaehler++;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-           //for (int i = 0; i <= 999; i++)
+            if (!string.IsNullOrEmpty(nummer[zaehler]))
             {
-                //if (!string.IsNullOrEmpty(zeit[i]))
-                     //textBox2.Text += newLine + "Startnummer: " + nummer[i] + " | " + zeit[i];
+                zeit[zaehler] = System.DateTime.Now.ToString("hh:mm:ss.ff");
+                textBox2.Text += newLine + "Startnummer: " + nummer[zaehler] + " | " + zeit[zaehler];
+                zaehler++;
             }
         }
 
@@ -49,5 +41,3 @@ namespace DateTime
 
     }
 }
-//Aufgabe 1: Ausgabe nur soviele Zeiten wie vorhanden
-//Aufgabe 2: Zeitmessung und Ausgabe mit Startnummer
