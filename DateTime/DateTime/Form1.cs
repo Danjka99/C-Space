@@ -54,7 +54,7 @@ namespace DateTime
             {
                 korrektur = int.Parse(textBox4.Text);
                 zeilennummer = (int.Parse(textBox3.Text) - 1);
-                if (!nummer1.Contains(korrektur.ToString()) && !(zeilennummer > nummer1.Count))
+                if (!nummer1.Contains(korrektur.ToString()) && !(zeilennummer >= nummer1.Count))
                 {
                     nummer1.RemoveAt(zeilennummer);
                     nummer1.Insert(zeilennummer, korrektur.ToString());
