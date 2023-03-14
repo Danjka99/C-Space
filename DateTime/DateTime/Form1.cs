@@ -33,7 +33,7 @@ namespace DateTime
         private void button1_Click(object sender, EventArgs e)
         {
             string newLine = Environment.NewLine;
-            if (!textBox1.Text.Equals("") && !nummer1.Contains(textBox1.Text))
+            if (!textBox1.Text.Equals("") && !nummer1.Contains(textBox1.Text) && (int.Parse(textBox1.Text) >= 0))
             {
                 TimeSpan ts = stoppuhr.Elapsed;
                 string zeitablauf = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
@@ -54,7 +54,7 @@ namespace DateTime
             {
                 korrektur = int.Parse(textBox4.Text);
                 zeilennummer = (int.Parse(textBox3.Text) - 1);
-                if (!nummer1.Contains(korrektur.ToString()) && !(zeilennummer >= nummer1.Count))
+                if (!nummer1.Contains(korrektur.ToString()) && !(zeilennummer >= nummer1.Count) && (zeilennummer >= 1) && (korrektur >= 0))
                 {
                     nummer1.RemoveAt(zeilennummer);
                     nummer1.Insert(zeilennummer, korrektur.ToString());
